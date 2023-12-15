@@ -1,0 +1,44 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.demo2 {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.demo2 .parallax>use {
+  animation: waveAnimateB 14s linear infinite;
+
+  &:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill-opacity: 0.2;
+  }
+
+  &:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 12s;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes waveAnimateB {
+  0% {
+    transform: translateX(-90px);
+  }
+
+  100% {
+    transform: translateX(85px);
+  }
+}

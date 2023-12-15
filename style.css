@@ -1,0 +1,183 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100svh;
+  background-color: #ffffff !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+img {
+  /* Applies to ALL img */
+  opacity: 0;
+
+  /* Drop Shadow */
+  /* filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3)); */
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.paw {
+  position: absolute;
+}
+
+.pawBlurred {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+#logo-render {
+  z-index: 2;
+  width: 60%;
+}
+
+
+/* Social Media buttons */
+.social-buttons {
+  margin-bottom: 20px;
+  z-index: 3;
+}
+
+.social-buttons a {
+  font-size: 24px;
+  margin: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  /* filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3)); */
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+
+}
+
+.coming-soon-text {
+  font-size: 25px;
+  margin-top: 30px;
+  font-family: 'Inter';
+  font-weight: 900;
+  opacity: 0;
+  animation: fadeIn 7s ease-in-out forwards;
+}
+
+/* Add some styles to the container to control the parallax effect */
+.parallax-container {
+  height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Style the logo element within the container */
+.parallax-element {
+  width: 200px; /* Adjust the width as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Initial position, adjust as needed */
+}
+
+/* Add the parallax effect */
+.parallax-element {
+  transform: translate(-50%, calc(-50% - 20px)); /* Adjust the vertical translation for the parallax effect */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Apply the parallax effect on hover */
+.parallax-container:hover .parallax-element {
+  transform: translate(-50%, calc(-50% - 40px)); /* Adjust the vertical translation for the parallax effect on hover */
+}
+
+
+#background-animation-container {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1000;
+}
+
+.ani-bubble {
+  background-color: #f89e1b;
+  border-radius: 75px;
+  height: 150px;
+  position: absolute;
+  top: 100%;
+  width: 150px;
+
+  -webkit-animation: bubblemove 10s linear infinite;
+  -moz-animation: bubblemove 10s linear infinite;
+  animation: bubblemove 10s linear infinite;
+}
+
+
+@-webkit-keyframes bubblemove {
+  from {
+    top: 100%;
+    filter: blur(0px);
+    opacity: 1
+  }
+
+  to {
+    top: -600px;
+    filter: blur(10px);
+    opacity: 0
+  }
+}
+
+@-moz-keyframes bubblemove {
+  from {
+    top: 100%;
+    filter: blur(0px);
+    opacity: 1
+  }
+
+  to {
+    top: -600px;
+    filter: blur(10px);
+    opacity: 0
+  }
+}
+
+@keyframes bubblemove {
+  from {
+    top: 100%;
+    filter: blur(0px);
+    opacity: 1
+  }
+
+  to {
+    top: -600px;
+    filter: blur(10px);
+    opacity: 0
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+
+  from {
+    transform: rotate(360deg);
+  }
+}
